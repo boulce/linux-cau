@@ -1,5 +1,18 @@
 #!/bin/sh
 
+if ! echo $1 |  grep -Eq "^[0-9]+$" ; 
+then
+	echo "you should enter only numbers on first parameter"
+	exit 1
+fi
+
+if ! echo $2 |  grep -Eq "^[0-9]+$" ;
+then
+        echo "you should enter only numbers on second parameter"
+        exit 1
+fi
+
+
 if [ -z $1 ] ||  [ $1 -le 0 ]
 then
 	echo "first parameter must be positive integer"
